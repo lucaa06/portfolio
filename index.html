@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="it" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luca Cutrono - Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- favicon per tutti i dispositivi-->
+ <link rel="shortcut icon" href="fav1.png" type="image/x-icon">
+ <link rel="shortcut icon" href="fav2.png" type="image/x-icon">
+ <link rel="shortcut icon" href="fav3.png" type="image/x-icon">
+    <style>
+        :root {
+            --primary-blue: #2A9FD6;
+            --secondary-blue: #1B6A8F;
+            --accent-blue: #89C4F4;
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border: 4px solid var(--primary-blue);
+        }
+
+        .quote {
+            font-size: 1.5rem;
+            color: var(--accent-blue);
+            border-left: 4px solid var(--primary-blue);
+            background: rgba(42, 159, 214, 0.1);
+        }
+
+        .passion-card {
+            transition: transform 0.3s;
+            border: 1px solid var(--primary-blue);
+            background: linear-gradient(to bottom right, #1B2631 0%, #0E1A26 100%);
+        }
+
+        .passion-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(42, 159, 214, 0.2);
+        }
+
+        .timeline-item {
+            border-left: 3px solid var(--primary-blue);
+        }
+
+        .nav-link {
+            transition: color 0.3s !important;
+        }
+
+        .text-primary {
+            color: var(--primary-blue) !important;
+        }
+
+        .bg-primary {
+            background-color: var(--primary-blue) !important;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-blue);
+            border-color: var(--primary-blue);
+        }
+
+        .border-primary {
+            border-color: var(--primary-blue) !important;
+        }
+    </style>
+</head>
+<body class="bg-dark text-light">
+    <header class="bg-dark-subtle py-5">
+        <div class="container text-center">
+            <img src="img.jpg" alt="Luca Cutrono" class="profile-img rounded-circle mb-4">
+            <h1 class="display-4 fw-bold text-primary">Luca Cutrono</h1>
+            <p class="lead text-info">Junior Full Stack Developer & Apprendista Poliedrico</p>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg bg-dark-subtle sticky-top">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto gap-3">
+                    <li class="nav-item"><a class="nav-link text-primary" href="#about">Chi Sono</a></li>
+                    <li class="nav-item"><a class="nav-link text-primary" href="#skills">Competenze</a></li>
+                    <li class="nav-item"><a class="nav-link text-primary" href="#passions">Passioni</a></li>
+                    <li class="nav-item"><a class="nav-link text-primary" href="#sports">Sport</a></li>
+                    <li class="nav-item"><a class="nav-link text-primary" href="#contact">Contatti</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-5">
+        <section id="about" class="mb-5">
+            <h2 class="text-primary mb-4">Chi Sono</h2>
+            <p class="lead">Sono uno sviluppatore web junior con una passione sfrenata per l'apprendimento e il miglioramento continuo. Nonostante la mia esperienza relativamente recente nel campo della programmazione, affronto ogni sfida con determinazione e grinta, qualità che ho affinato in anni di sport agonistico.</p>
+        </section>
+
+        <section id="skills" class="mb-5">
+            <h2 class="text-primary mb-4">Competenze Tecniche</h2>
+            <div class="row g-4">
+                <div class="col-md-4 col-6">
+                    <div class="bg-dark-subtle p-3 rounded text-center border-primary">
+                        <i class="bi bi-filetype-html fs-1 text-primary"></i>
+                        <h3 class="h5 mt-2">HTML5</h3>
+                    </div>
+                </div>
+                <!-- Altre competenze -->
+                <div class="col-md-4 col-6">
+                    <div class="bg-dark-subtle p-3 rounded text-center border-primary">
+                        <i class="bi bi-filetype-css fs-1 text-primary"></i>
+                        <h3 class="h5 mt-2">CSS3</h3>
+                    </div>
+                </div>
+                <div class="col-md-4 col-6">
+                    <div class="bg-dark-subtle p-3 rounded text-center border-primary">
+                        <i class="bi bi-filetype-js fs-1 text-primary"></i>
+                        <h3 class="h5 mt-2">JavaScript</h3>
+                    </div>
+                </div>
+                <div class="col-md-4 col-6">
+                    <div class="bg-dark-subtle p-3 rounded text-center border-primary">
+                        <i class="bi bi-filetype-php fs-1 text-primary"></i>
+                        <h3 class="h5 mt-2">PHP</h3>
+                    </div>
+                </div>
+                <div class="col-md-4 col-6">
+                    <div class="bg-dark-subtle p-3 rounded text-center border-primary">
+                        <i class="bi bi-database fs-1 text-primary"></i>
+                        <h3 class="h5 mt-2">SQL</h3>
+                    </div>
+                </div>
+                <div class="col-md-4 col-6">
+                    <div class="bg-dark-subtle p-3 rounded text-center border-primary">
+                        <i class="bi bi-router fs-1 text-primary"></i>
+                        <h3 class="h5 mt-2">Reti Cisco</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="passions" class="mb-5">
+            <h2 class="text-primary mb-4"><i class="bi bi-stars me-2 text-primary"></i>Passioni Esplosive</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="passion-card h-100 p-4 rounded">
+                        <i class="bi bi-building fs-1 text-primary"></i>
+                        <h3 class="h5 mt-3 text-primary">Politica & Società</h3>
+                        <p class="text-info">Analisi critica dei sistemi governativi e ricerca di soluzioni innovative per il bene comune.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="passion-card h-100 p-4 rounded">
+                        <i class="bi bi-cpu fs-1 text-primary"></i>
+                        <h3 class="h5 mt-3 text-primary">Tech Revolution</h3>
+                        <p class="text-info">Esplorazione di nuove tecnologie e sperimentazione con linguaggi emergenti.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="passion-card h-100 p-4 rounded">
+                        <i class="bi bi-graph-up fs-1 text-primary"></i>
+                        <h3 class="h5 mt-3 text-primary">Economia Strategica</h3>
+                        <p class="text-info">Studio dei mercati globali e strategie di crescita sostenibile.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="passion-card h-100 p-4 rounded">
+                        <i class="bi bi-tools fs-1 text-primary"></i>
+                        <h3 class="h5 mt-3 text-primary">Maker Spirit</h3>
+                        <p class="text-info">Prototipi con Arduino e soluzioni IoT personalizzate.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="quote p-4 my-5 rounded">
+            <i class="bi bi-stars fs-3 me-2 text-primary"></i>"HO VOGLIA DI FARE E RAGGIUNGERE LE VETTE PIÙ ALTE!!!"
+        </div>
+
+        <section id="sports" class="mb-5">
+            <h2 class="text-primary mb-4">Esperienza Sportiva</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="timeline-item ps-4">
+                        <i class="bi bi-trophy fs-3 text-primary"></i>
+                        <h3 class="h4 mt-2 text-primary">8 Anni Pallavolo Agonistica</h3>
+                        <p class="text-info">Formazione professionale e lavoro di squadra</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="timeline-item ps-4">
+                        <i class="bi bi-people fs-3 text-primary"></i>
+                        <h3 class="h4 mt-2 text-primary">Allenatore Under 13</h3>
+                        <p class="text-info">Leadership e gestione del team</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="mb-5">
+            <h2 class="text-primary mb-4">Contatti</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="d-flex align-items-center gap-3">
+                        <i class="bi bi-envelope fs-3 text-primary"></i>
+                        <div>
+                            <h3 class="h5 text-primary">Email</h3>
+                            <a href="mailto:lucacutrono06@email.com" class="text-info">lucacutrono06@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex align-items-center gap-3">
+                        <i class="bi bi-linkedin fs-3 text-primary"></i>
+                        <div>
+                            <h3 class="h5 text-primary">LinkedIn</h3>
+                            <a href="https://linkedin.com/in/luca-cutrono" class="text-info">linkedin.com/in/luca-cutrono</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark-subtle py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-0 text-primary">&copy; 2025 Luca Cutrono. Tutti i diritti riservati.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
