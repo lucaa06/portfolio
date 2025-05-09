@@ -1,238 +1,507 @@
+<!--
+  Luca Cutrono Portfolio - Modern Responsive Design
+  Includes GSAP, AOS, Typed.js, FontAwesome, Bootstrap Icons, Parallax, and more
+-->
+
 <!DOCTYPE html>
-<html lang="it" data-bs-theme="dark">
+<html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luca Cutrono - Portfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- Meta tag essenziali -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Luca Cutrono" />
+  <meta name="description" content="Portfolio di Luca Cutrono - Programmatore e appassionato di tecnologia" />
 
-    <!-- favicon per tutti i dispositivi-->
- <link rel="shortcut icon" href="fav1.png" type="image/x-icon">
- <link rel="shortcut icon" href="fav2.png" type="image/x-icon">
- <link rel="shortcut icon" href="fav3.png" type="image/x-icon">
-    <style>
-        :root {
-            --primary-blue: #2A9FD6;
-            --secondary-blue: #1B6A8F;
-            --accent-blue: #89C4F4;
-        }
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet" />
 
-        .profile-img {
-            width: 200px;
-            height: 200px;
-            object-fit: cover;
-            border: 4px solid var(--primary-blue);
-        }
+  <!-- FontAwesome e Bootstrap Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
 
-        .quote {
-            font-size: 1.5rem;
-            color: var(--accent-blue);
-            border-left: 4px solid var(--primary-blue);
-            background: rgba(42, 159, 214, 0.1);
-        }
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link rel="shortcut icon" href="fav3.png">
 
-        .passion-card {
-            transition: transform 0.3s;
-            border: 1px solid var(--primary-blue);
-            background: linear-gradient(to bottom right, #1B2631 0%, #0E1A26 100%);
-        }
+  <!-- Stili base -->
+  <style>
+    /* Reset CSS */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        .passion-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(42, 159, 214, 0.2);
-        }
+    html {
+      scroll-behavior: smooth;
+    }
 
-        .timeline-item {
-            border-left: 3px solid var(--primary-blue);
-        }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: #fff;
+      background: #0e0e0e;
+      overflow-x: hidden;
+    }
 
-        .nav-link {
-            transition: color 0.3s !important;
-        }
+    header {
+      background: linear-gradient(135deg, #000, #111);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      text-align: center;
+    }
 
-        .text-primary {
-            color: var(--primary-blue) !important;
-        }
+    header h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      color: #00fff7;
+    }
+    .typed-cursor{
+      display:none;
+    }
+    header .typed-text {
+      font-size: 1.5rem;
+      margin-top: 30px;
+      color: #fff;
+    }
 
-        .bg-primary {
-            background-color: var(--primary-blue) !important;
-        }
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 10px 30px;
+      display: flex;
+      justify-content: space-between;
+      z-index: 1000;
+    }
 
-        .btn-primary {
-            background-color: var(--primary-blue);
-            border-color: var(--primary-blue);
-        }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: 600;
+    }
 
-        .border-primary {
-            border-color: var(--primary-blue) !important;
+    section {
+      padding: 100px 50px;
+    }
+
+    .about, .skills, .experience, .contact, .cv, .story {
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      color: #00fff7;
+      text-align: center;
+    }
+
+    .parallax {
+      background-image: url('https://images.unsplash.com/photo-1581091012184-7ab359d5a08e?auto=format&fit=crop&w=1920&q=80');
+      background-attachment: fixed;
+      background-position: center;
+      background-size: cover;
+      padding: 150px 0;
+      text-align: center;
+    }
+
+    .skills-list, .soft-skills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .skills-list div, .soft-skills div {
+      background: #1a1a1a;
+      margin: 10px;
+      padding: 20px;
+      flex: 1 1 calc(50% - 20px);
+      border-left: 4px solid #00fff7;
+    }
+
+    .contact a {
+      display: block;
+      color: #00fff7;
+      font-size: 1.2rem;
+      margin: 10px 0;
+      text-decoration: none;
+    }
+
+    footer {
+      background: #111;
+      padding: 20px;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    /* Stile per la sezione storia */
+    .story-container {
+      background: #1a1a1a;
+      padding: 30px;
+      border-radius: 8px;
+      margin-top: 20px;
+      border-left: 4px solid #00fff7;
+    }
+
+    #story-text {
+      min-height: 200px;
+      line-height: 1.6;
+      font-size: 1.1rem;
+    }
+
+    .story-buttons {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    #generate-story, #stop-story {
+      background: #00fff7;
+      color: #0e0e0e;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    #generate-story:hover, #stop-story:hover {
+      background: #00c4be;
+      transform: translateY(-2px);
+    }
+
+    #stop-story {
+      background: #ff3a3a;
+      display: none;
+    }
+
+    #stop-story:hover {
+      background: #cc2e2e;
+    }
+
+    .language-selector {
+      margin-bottom: 20px;
+    }
+
+    .language-selector label {
+      margin-right: 10px;
+      color: #00fff7;
+    }
+
+    .language-selector select {
+      background: #333;
+      color: white;
+      border: 1px solid #00fff7;
+      padding: 8px 12px;
+      border-radius: 4px;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    @media (max-width: 768px) {
+      .skills-list div, .soft-skills div {
+        flex: 1 1 100%;
+      }
+
+      .story-buttons {
+        flex-direction: column;
+      }
+    }
+    .heyAnimation {
+      display: inline-block;
+      position: relative;
+      transform-origin: 50% 100%; /* Punto di ancoraggio nella parte inferiore */
+      animation: heyAnimation 7s infinite;
+    }
+
+    @keyframes heyAnimation {
+        0%, 14.3% { /* 2s/7s ≈ 0.2857 → 28.57% del ciclo (ma 0-14.3% è 2s su 14s) */
+            transform: translateY(0) translateX(0) scale(1);
+            color: #00e6ff;
         }
-    </style>
+        7% { /* Metà dell'animazione attiva (a 1s) */
+            transform: translateY(-15px) translateX(-10px) scale(1.2);
+              color: #00e6ff;
+        }
+        14.3% { /* Fine dell'animazione attiva (a 2s) */
+            transform: translateY(0) translateX(10px) scale(1.1);
+              color: #00e6ff;
+        }
+        100% { /* Pausa fino a 7s (5s di pausa + 2s animazione) */
+            transform: translateY(0) translateX(0) scale(1);
+              color: #00e6ff;
+        }
+    }
+    a{
+      color: #00e6ff;
+    }
+  </style>
 </head>
-<body class="bg-dark text-light">
-    <header class="bg-dark-subtle py-5">
-        <div class="container text-center">
-            <img src="img.jpg" alt="Luca Cutrono" class="profile-img rounded-circle mb-4">
-            <h1 class="display-4 fw-bold text-primary">Luca Cutrono</h1>
-            <p class="lead text-info">Junior Full Stack Developer & Apprendista Poliedrico</p>
-        </div>
-    </header>
+<body>
 
-    <nav class="navbar navbar-expand-lg bg-dark-subtle sticky-top">
-        <div class="container">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto gap-3">
-                    <li class="nav-item"><a class="nav-link text-primary" href="#about">Chi Sono</a></li>
-                    <li class="nav-item"><a class="nav-link text-primary" href="#skills">Competenze</a></li>
-                    <li class="nav-item"><a class="nav-link text-primary" href="#passions">Passioni</a></li>
-                    <li class="nav-item"><a class="nav-link text-primary" href="#sports">Sport</a></li>
-                    <li class="nav-item"><a class="nav-link text-primary" href="#contact">Contatti</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+<!-- Navigazione fissa -->
+<nav>
+  <div><strong>LUCA CUTRONO</strong></div>
+  <div>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Esperienza</a>
+    <a href="#story">La Mia Storia</a>
+    <a href="#cv">CV</a>
+    <a href="#contact">Contatti</a>
+  </div>
+</nav>
 
-    <main class="container py-5">
-        <section id="about" class="mb-5">
-            <h2 class="text-primary mb-4">Chi Sono</h2>
-            <p class="lead">Sono uno sviluppatore web junior con una passione sfrenata per l'apprendimento e il miglioramento continuo. Nonostante la mia esperienza relativamente recente nel campo della programmazione, affronto ogni sfida con determinazione e grinta, qualità che ho affinato in anni di sport agonistico.</p>
-        </section>
+<!-- Hero con effetto Typed.js -->
+<header>
+  <h1>Luca Cutrono</h1>
+  <div class="typed-text" id="typed"></div>
+</header>
 
-        <section id="skills" class="mb-5">
-            <h2 class="text-primary mb-4">Competenze Tecniche</h2>
-            <div class="row g-4">
-                <div class="col-md-4 col-6">
-                    <div class="bg-dark-subtle p-3 rounded text-center border-primary">
-                        <i class="bi bi-filetype-html fs-1 text-primary"></i>
-                        <h3 class="h5 mt-2">HTML5</h3>
-                    </div>
-                </div>
-                <!-- Altre competenze -->
-                <div class="col-md-4 col-6">
-                    <div class="bg-dark-subtle p-3 rounded text-center border-primary">
-                        <i class="bi bi-filetype-css fs-1 text-primary"></i>
-                        <h3 class="h5 mt-2">CSS3</h3>
-                    </div>
-                </div>
-                <div class="col-md-4 col-6">
-                    <div class="bg-dark-subtle p-3 rounded text-center border-primary">
-                        <i class="bi bi-filetype-js fs-1 text-primary"></i>
-                        <h3 class="h5 mt-2">JavaScript</h3>
-                    </div>
-                </div>
-                <div class="col-md-4 col-6">
-                    <div class="bg-dark-subtle p-3 rounded text-center border-primary">
-                        <i class="bi bi-filetype-php fs-1 text-primary"></i>
-                        <h3 class="h5 mt-2">PHP</h3>
-                    </div>
-                </div>
-                <div class="col-md-4 col-6">
-                    <div class="bg-dark-subtle p-3 rounded text-center border-primary">
-                        <i class="bi bi-database fs-1 text-primary"></i>
-                        <h3 class="h5 mt-2">SQL</h3>
-                    </div>
-                </div>
-                <div class="col-md-4 col-6">
-                    <div class="bg-dark-subtle p-3 rounded text-center border-primary">
-                        <i class="bi bi-router fs-1 text-primary"></i>
-                        <h3 class="h5 mt-2">Reti Cisco</h3>
-                    </div>
-                </div>
-            </div>
-        </section>
+<!-- Sezione About -->
+<section id="about" class="about" data-aos="fade-up">
+  <h2 class="section-title">Chi Sono</h2>
+  <p><span class="heyAnimation">HEY!</span> Mi chiamo Luca e ho 19 anni
+     <br> Non sono uno che vuole rimanere con le mani in mano e senza lavoro, quindi voglio fare esperienza in tutti i campi per conoscere il mondo che mi circonda.</p>
+</section>
 
-        <section id="passions" class="mb-5">
-            <h2 class="text-primary mb-4"><i class="bi bi-stars me-2 text-primary"></i>Passioni Esplosive</h2>
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-3">
-                    <div class="passion-card h-100 p-4 rounded">
-                        <i class="bi bi-building fs-1 text-primary"></i>
-                        <h3 class="h5 mt-3 text-primary">Politica & Società</h3>
-                        <p class="text-info">Analisi critica dei sistemi governativi e ricerca di soluzioni innovative per il bene comune.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="passion-card h-100 p-4 rounded">
-                        <i class="bi bi-cpu fs-1 text-primary"></i>
-                        <h3 class="h5 mt-3 text-primary">Tech Revolution</h3>
-                        <p class="text-info">Esplorazione di nuove tecnologie e sperimentazione con linguaggi emergenti.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="passion-card h-100 p-4 rounded">
-                        <i class="bi bi-graph-up fs-1 text-primary"></i>
-                        <h3 class="h5 mt-3 text-primary">Economia Strategica</h3>
-                        <p class="text-info">Studio dei mercati globali e strategie di crescita sostenibile.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="passion-card h-100 p-4 rounded">
-                        <i class="bi bi-tools fs-1 text-primary"></i>
-                        <h3 class="h5 mt-3 text-primary">Maker Spirit</h3>
-                        <p class="text-info">Prototipi con Arduino e soluzioni IoT personalizzate.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+<!-- Sezione Skills -->
+<section id="skills" class="skills" data-aos="fade-right">
+  <h2 class="section-title">Competenze Tecniche & Soft Skills</h2>
+  <div class="skills-list">
+    <div><strong>Linguaggi:</strong><br>HTML5, CSS3, JavaScript, Java, PHP, SQL</div>
+    <div><strong>Altre:</strong><br>Reti CISCO, Excel</div>
+  </div>
+  <div class="soft-skills">
+    <div><strong>Problem Solving</strong></div>
+    <div><strong>Creatività</strong></div>
+    <div><strong>Gestione Progetti</strong></div>
+    <div><strong>Analisi Dati</strong></div>
+    <div><strong>Teamwork</strong></div>
+    <div><strong>Adattabilità</strong></div>
+  </div>
+</section>
+<br><br><br><br>
+<!-- Sfondo Parallax -->
+<div class="parallax" data-aos="zoom-in">
+  <h2 style="color: #fff; font-size: 2rem;">se tu vuoi il mondo, prenditelo e non aver paura degli effetti collaterali</h2>
+</div>
+<br><br><br><br>
+<!-- Esperienza -->
+<section id="experience" class="experience" data-aos="fade-left">
+  <h2 class="section-title">Esperienza</h2>
+  <p>Allenatore di pallavolo Under 13 Maschile presso <strong>CUS Genova Volley</strong>.</p>
+  <p>Appassionato di informatica e programmazione. Sempre pronto ad aiutare chi mi circonda.</p>
+</section>
 
-        <div class="quote p-4 my-5 rounded">
-            <i class="bi bi-stars fs-3 me-2 text-primary"></i>"HO VOGLIA DI FARE E RAGGIUNGERE LE VETTE PIÙ ALTE!!!"
-        </div>
+<!-- Sezione Storia Generata -->
+<section id="story" class="story" data-aos="fade-up">
+  <h2 class="section-title">La Mia Storia</h2>
+  <div class="story-container">
+    <div class="language-selector">
+      <label for="story-language">Seleziona lingua:</label>
+      <select id="story-language">
+        <option value="italian">Italiano</option>
+        <option value="english">English</option>
+        <option value="german">Deutsch</option>
+        <option value="chinese">中文</option>
+        <option value="russian">Русский</option>
+        <option value="arabic">العربية</option>
+        <option value="french">Français</option>
+        <option value="spanish">Español</option>
+        <option value="portuguese">Português</option>
+      </select>
+    </div>
+    <p id="story-text">Clicca il pulsante qui sotto per scoprire la mia storia...</p>
+    <div class="story-buttons">
+      <button id="generate-story">Genera la Mia Storia</button>
+      <button id="stop-story">Interrompi Generazione</button>
+    </div>
+  </div>
+</section>
 
-        <section id="sports" class="mb-5">
-            <h2 class="text-primary mb-4">Esperienza Sportiva</h2>
-            <div class="row g-4">
-                <div class="col-md-6">
-                    <div class="timeline-item ps-4">
-                        <i class="bi bi-trophy fs-3 text-primary"></i>
-                        <h3 class="h4 mt-2 text-primary">8 Anni Pallavolo Agonistica</h3>
-                        <p class="text-info">Formazione professionale e lavoro di squadra</p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="timeline-item ps-4">
-                        <i class="bi bi-people fs-3 text-primary"></i>
-                        <h3 class="h4 mt-2 text-primary">Allenatore Under 13</h3>
-                        <p class="text-info">Leadership e gestione del team</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+<!-- CV Scaricabile -->
+<section id="cv" class="cv" data-aos="flip-up">
+  <h2 class="section-title">Curriculum</h2>
+  <p>Certificato: <strong>Introducing to Cybersecurity (CISCO)</strong></p>
+  <a href="https://lucaa06.github.io/portfolio/assets/CV.pdf" download style="color: #00fff7;">📄 Scarica il mio CV</a>
+</section>
 
-        <section id="contact" class="mb-5">
-            <h2 class="text-primary mb-4">Contatti</h2>
-            <div class="row g-4">
-                <div class="col-md-6">
-                    <div class="d-flex align-items-center gap-3">
-                        <i class="bi bi-envelope fs-3 text-primary"></i>
-                        <div>
-                            <h3 class="h5 text-primary">Email</h3>
-                            <a href="mailto:lucacutrono06@email.com" class="text-info">lucacutrono06@gmail.com</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="d-flex align-items-center gap-3">
-                        <i class="bi bi-linkedin fs-3 text-primary"></i>
-                        <div>
-                            <h3 class="h5 text-primary">LinkedIn</h3>
-                            <a href="https://linkedin.com/in/luca-cutrono" class="text-info">linkedin.com/in/luca-cutrono</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+<!-- Contatti -->
+<section id="contact" class="contact" data-aos="fade-up">
+  <h2 class="section-title">Contatti</h2>
+  <a href="mailto:lucacutrono06@gmail.com"><i class="fas fa-envelope"></i> lucacutrono06@gmail.com</a>
+  <a href="https://github.com/lucaa06" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+  <a href="https://www.linkedin.com/in/luca-cutrono-710359285/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+</section>
 
-    <footer class="bg-dark-subtle py-4 mt-5">
-        <div class="container text-center">
-            <p class="mb-0 text-primary">&copy; 2025 Luca Cutrono. Tutti i diritti riservati.</p>
-        </div>
-    </footer>
+<!-- Footer -->
+<footer>
+  &copy; 2025 Luca Cutrono. Tutti i diritti riservati.
+</footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- JS Librerie -->
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+<!-- Script interattivo -->
+<script>
+  // Effetto digitazione con Typed.js
+  new Typed('#typed', {
+    strings: ["Programmatore", "Appassionato di tecnologia", "appassionato di pallavolo", "Curioso e creativo"],
+    typeSpeed: 60,
+    backSpeed: 30,
+    loop: true
+  });
+
+  // Inizializzazione animazioni AOS
+  AOS.init({
+    duration: 1000,
+    once: true
+  });
+
+  // Effetti GSAP all'avvio
+  gsap.from("header h1", { opacity: 0, y: -50, duration: 1 });
+  gsap.from("header .typed-text", { opacity: 0, delay: 0.5, y: 30, x: 50, duration: 1 });
+
+  // Variabile per l'intervallo di digitazione
+  let typingInterval;
+  let currentStory = '';
+
+  // Generazione storia lettera per lettera
+  document.getElementById('generate-story').addEventListener('click', function() {
+    const language = document.getElementById('story-language').value;
+    const stories = {
+  italian: `Fin da piccolo sono sempre stato affascinato dalla tecnologia e dal funzionamento delle cose. Con il tempo, ho sviluppato diversi interessi: dalla programmazione web alla robotica, passando per la pallavolo e, oggi, il mondo delle startup.
+
+La mia passione per la pallavolo è nata alle scuole elementari, quando ho scoperto il valore del lavoro di squadra. Dopo nove anni di esperienza, oggi mi considero piuttosto abile in questo sport e ho scelto di trasmettere ciò che ho imparato allenando una squadra Under 13. Credo fortemente nello sport come scuola di vita: mi ha aiutato a sviluppare disciplina, spirito collaborativo e organizzazione mentale.
+
+Negli ultimi tempi ho dovuto ridurre la pratica della pallavolo, ma ho trovato nella corsa una nuova valvola di sfogo. Correre mi ha insegnato la costanza, la gestione delle emozioni e l'importanza della motivazione anche nei momenti più difficili.
+
+Il mio interesse per il mondo delle startup è esploso dopo aver conosciuto Vittorio Viarengo, che mi ha ispirato e motivato profondamente. Grazie alla mia docente di Gestione d’Impresa ho avuto la possibilità di avvicinarmi concretamente a questo ambiente stimolante. Figure come Paolo Marenco e Simona Borghi sono state fondamentali nel mio percorso, arricchito anche dalla partecipazione a conferenze e incontri di grande valore.
+
+Nel 2024 ho ottenuto la certificazione CISCO in Cybersecurity e, più recentemente, la certificazione AWS Cloud 101. Questi traguardi mi hanno spinto a impegnarmi ancora di più nello studio e nella formazione continua.
+
+Il mio obiettivo? Creare soluzioni tecnologiche utili e accessibili, capaci di migliorare concretamente la vita quotidiana delle persone.
+
+Ogni giorno rappresenta per me una nuova opportunità per crescere, imparare e diventare una persona e un professionista migliore.`,
+
+  english: `Since I was a child, I've been fascinated by technology and how things work. Over the years, I’ve developed interests in web programming, robotics, and more recently, the startup world.
+
+My passion for volleyball started in elementary school, where I discovered the power of teamwork. With nine years of experience, I now coach Under 13 boys because I believe sports are a true school of life.
+
+In 2024, I earned the CISCO Cybersecurity certification and recently also the AWS Cloud 101. These milestones pushed me to keep learning. My goal? To create tech solutions that can make people’s daily lives better.
+
+Every day is a new chance to learn and grow, both professionally and personally.`,
+
+  german: `Schon als Kind war ich fasziniert von Technologie und wie Dinge funktionieren. Im Laufe der Jahre entwickelte ich Interessen in Bereichen wie Webprogrammierung, Robotik und zuletzt im Startup-Umfeld.
+
+Meine Leidenschaft für Volleyball begann in der Grundschule, als ich die Kraft der Teamarbeit entdeckte. Nach neun Jahren Erfahrung trainiere ich heute U13-Jungen, weil ich an den Sport als echte Lebensschule glaube.
+
+2024 erwarb ich die CISCO-Zertifizierung in Cybersicherheit und kürzlich auch die AWS Cloud 101-Zertifizierung. Diese Erfolge motivierten mich, weiter zu lernen. Mein Ziel? Technologische Lösungen zu entwickeln, die den Alltag der Menschen verbessern.
+
+Jeder Tag ist eine neue Gelegenheit, sowohl beruflich als auch persönlich zu wachsen.`,
+
+  chinese: `从小我就对技术和事物的运作方式充满兴趣。多年来，我发展了网页编程、机器人技术以及最近对创业世界的兴趣。
+
+我对排球的热情始于小学，那时我体会到团队合作的力量。如今我拥有九年经验，并执教13岁以下男孩，因为我相信体育是人生最好的学校。
+
+在2024年，我获得了CISCO网络安全认证，并且最近也拿到了AWS Cloud 101认证。这些成就激励我不断学习。我的目标？创造能够改善人们日常生活的技术解决方案。
+
+每天都是学习和成长的新机会，无论是专业上还是个人方面。`,
+
+  russian: `С детства меня увлекали технологии и то, как всё устроено. Со временем я развил интерес к веб-программированию, робототехнике, а в последнее время — к миру стартапов.
+
+Моя страсть к волейболу началась в начальной школе, когда я осознал силу командной работы. За девять лет игры я стал тренировать мальчиков до 13 лет, ведь верю, что спорт — это настоящая школа жизни.
+
+В 2024 году я получил сертификат CISCO по кибербезопасности, а недавно — также AWS Cloud 101. Эти достижения вдохновили меня учиться дальше. Моя цель? Создавать технологические решения, помогающие людям в повседневной жизни.
+
+Каждый день — это новая возможность расти и развиваться как профессионально, так и лично.`,
+
+  arabic: `منذ طفولتي وأنا مفتون بالتكنولوجيا وكيفية عمل الأشياء. على مر السنين، طورت اهتمامات في برمجة المواقع والروبوتات، ومؤخرًا في عالم الشركات الناشئة.
+
+بدأ شغفي بالكرة الطائرة في المدرسة الابتدائية، عندما أدركت أهمية العمل الجماعي. بعد تسع سنوات من الخبرة، أدرب اليوم فئة تحت 13 عامًا لأنني أؤمن بأن الرياضة مدرسة حقيقية للحياة.
+
+في عام 2024، حصلت على شهادة سيسكو في الأمن السيبراني، ومؤخرًا على شهادة AWS Cloud 101. هذه الإنجازات حفزتني على الاستمرار في التعلم. هدفي؟ إنشاء حلول تكنولوجية تحسن حياة الناس اليومية.
+
+كل يوم هو فرصة جديدة للتعلم والنمو، مهنيًا وشخصيًا.`,
+
+  french: `Depuis mon enfance, la technologie et le fonctionnement des choses m’ont toujours fasciné. Au fil des années, j’ai développé des intérêts variés comme la programmation web, la robotique, et plus récemment le monde des startups.
+
+Ma passion pour le volley-ball a commencé à l’école primaire, où j’ai découvert la force du travail d’équipe. Avec neuf ans d’expérience, j’entraîne aujourd’hui des garçons de moins de 13 ans car je crois que le sport est une véritable école de vie.
+
+En 2024, j’ai obtenu la certification CISCO en cybersécurité, puis la certification AWS Cloud 101. Ces réussites m’ont motivé à continuer d’apprendre. Mon objectif ? Créer des solutions technologiques utiles dans la vie quotidienne.
+
+Chaque jour est une nouvelle opportunité d’apprendre et de grandir, tant sur le plan professionnel que personnel.`,
+
+  spanish: `Desde pequeño, me ha fascinado la tecnología y cómo funcionan las cosas. A lo largo del tiempo he desarrollado intereses como la programación web, la robótica y, más recientemente, el mundo de las startups.
+
+Mi pasión por el voleibol comenzó en la escuela primaria, donde descubrí el poder del trabajo en equipo. Hoy, con nueve años de experiencia, entreno a chicos menores de 13 años porque creo en el deporte como una verdadera escuela de vida.
+
+En 2024 obtuve la certificación CISCO en Ciberseguridad y recientemente también la certificación AWS Cloud 101. Estos logros me impulsaron a seguir aprendiendo. ¿Mi objetivo? Crear soluciones tecnológicas que mejoren la vida diaria de las personas.
+
+Cada día es una nueva oportunidad para aprender y crecer, tanto a nivel profesional como personal.`,
+
+  portuguese: `Desde criança, sempre fui fascinado por tecnologia e como as coisas funcionam. Com o tempo, desenvolvi interesses como programação web, robótica e, mais recentemente, o mundo das startups.
+
+Minha paixão pelo vôlei começou na escola primária, quando percebi a importância do trabalho em equipe. Com nove anos de experiência, hoje treino meninos Sub-13 porque acredito que o esporte é uma verdadeira escola para a vida.
+
+Em 2024, conquistei a certificação CISCO em Cibersegurança e, mais recentemente, a certificação AWS Cloud 101. Essas conquistas me incentivaram a continuar estudando. Meu objetivo? Criar soluções tecnológicas que melhorem o cotidiano das pessoas.
+
+Cada dia é uma nova chance de aprender e crescer, tanto como profissional quanto como pessoa.`
+};
+
+
+    currentStory = stories[language] || stories['italian'];
+    const storyElement = document.getElementById('story-text');
+    storyElement.textContent = '';
+    this.disabled = true;
+    document.getElementById('stop-story').style.display = 'inline-block';
+    this.textContent = 'Generazione in corso...';
+
+    let i = 0;
+    typingInterval = setInterval(() => {
+      if (i < currentStory.length) {
+        storyElement.textContent += currentStory.charAt(i);
+        i++;
+        // Scorrimento automatico per mantenere il testo visibile
+        storyElement.scrollTop = storyElement.scrollHeight;
+      } else {
+        stopTyping(true);
+      }
+    }, 30); // Velocità di digitazione (millisecondi per carattere)
+  });
+
+  // Funzione per interrompere la digitazione
+  function stopTyping(completed = false) {
+    clearInterval(typingInterval);
+    const generateBtn = document.getElementById('generate-story');
+    const stopBtn = document.getElementById('stop-story');
+
+    if (completed) {
+      generateBtn.textContent = 'Rigenera Storia';
+    } else {
+      // Se interrotto manualmente, mostra il testo completo
+      document.getElementById('story-text').textContent = currentStory;
+    }
+
+    generateBtn.disabled = false;
+    stopBtn.style.display = 'none';
+  }
+
+  // Listener per il pulsante di interruzione
+  document.getElementById('stop-story').addEventListener('click', function() {
+    stopTyping();
+  });
+</script>
+
 </body>
 </html>
