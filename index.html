@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luca Cutrono</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/20L5KVS/53m9w02r7/6U5R4P23fT2sW3Z7V9S8v3b3R3f7V9S9T7S8P5U3U3S2U2R4G3S7W9" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.com/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="js/script.js" defer></script> 
+</head>
+<body>
+
+    <div id="language-switcher">
+        <button id="lang-btn">
+            <img src="https://flagcdn.com/24x18/gb.png" alt="English Flag" id="flag-img">
+        </button>
+    </div>
+
+    <section id="hero" class="full-screen-section">
+        <div class="hero-content">
+            <h1 data-key="hero-title">Ciao, sono Luca.</h1>
+            <p data-key="hero-subtitle">student and startup enthusiast</p>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/luca-cutrono-710359285" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://luca06.github.io/portfolio/" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="mailto:lucacutrono06@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+        <a href="#about" class="scroll-down-arrow"><i class="fas fa-chevron-down"></i></a>
+    </section>
+
+    <section id="about" class="full-screen-section">
+        <h2 data-key="about-title">About</h2>
+        
+        <div class="about-text">
+           <p data-key="p1">Fin da piccolo sono stato affascinato dalla tecnologia e dal funzionamento delle cose. Con il tempo, ho sviluppato interessi diversi: dalla programmazione web alla robotica, passando per la pallavolo e, oggi, il mondo delle startup.</p>
+
+<p data-key="p2">La mia passione per la pallavolo è nata alle scuole elementari, quando ho scoperto il valore del lavoro di squadra. Dopo nove anni di esperienza in campo, oggi alleno una squadra Under 13 perché credo fortemente nello sport come scuola di vita: mi ha insegnato disciplina, spirito collaborativo e capacità di affrontare le sfide. Negli ultimi tempi ho trovato nella corsa una nuova valvola di sfogo, che mi ha trasmesso costanza e motivazione.</p>
+
+<p data-key="p3">L’interesse per il mondo delle startup è esploso dopo aver conosciuto Vittorio Viarengo, figura che mi ha ispirato profondamente. Grazie anche al supporto e agli insegnamenti di persone come Paolo Marenco e Simona Borghi, e alla partecipazione a conferenze di grande valore, mi sono avvicinato a questo ambiente stimolante. Nel 2024 ho conseguito la certificazione CISCO in Cybersecurity e, più recentemente, la AWS Cloud 101.</p>
+
+<p data-key="p4">Il mio obiettivo è chiaro: creare soluzioni tecnologiche utili e accessibili, capaci di migliorare concretamente la vita quotidiana. Ogni giorno rappresenta per me un’opportunità per crescere, imparare e diventare un professionista migliore.</p>
+
+<p data-key="p5">Di recente ho riscoperto il mondo dei bambini lavorando come animatore alle feste. In mezzo a risate, giochi e colori, ho imparato a mettermi in gioco in un modo nuovo: rallentando, ascoltando davvero e lasciandomi stupire dalle piccole cose. È un’attività che mi permette di tornare bambino, osservando la realtà con occhi curiosi, pieni di immaginazione e spontaneità. Lavorare con i più piccoli richiede empatia, creatività e la capacità di reinventarsi continuamente, qualità che considero preziose anche per la mia crescita personale e professionale.</p>
+
+<p data-key="p6">Credo profondamente che mantenere vivo questo sguardo fresco e autentico sia fondamentale per affrontare le sfide del presente con leggerezza e lucidità. In fondo, restare un po’ bambini per tutta la vita è forse il segreto per non smettere mai di imparare davvero.</p>
+
+        </div>
+    </section>
+    
+<section id="projects" class="full-screen-section">
+    <div class="projects-header">
+        <h2 data-key="projects-title">Progetti</h2>
+        <a href="https://github.com/lucaa06" target="_blank" class="github-link">
+            <i class="fab fa-github"></i>
+            <span data-key="github-profile-title">Il mio profilo GitHub</span>
+        </a>
+    </div>
+
+    <div class="projects-grid">
+        <div class="project-card">
+            <div class="project-image-container">
+                <img src="./img/portfolio.png" alt="Portfolio Project">
+            </div>
+            <h3 data-key="project-portfolio-title">Portfolio</h3>
+            <p data-key="project-portfolio-description">Il mio portfolio personale per mostrare le mie competenze e i miei lavori.</p>
+            <div class="project-links">
+                <a href="https://lucaa06.github.io/portfolio/" target="_blank" class="btn-launch-demo" data-key="launch-demo-btn-text" title="Lancia demo">
+                     <img src="./img/lounch.png" alt="demo">
+                </a>
+                <a href="https://github.com/lucaa06/portfolio" target="_blank" class="btn-view-code" data-key="view-code-btn-text" title="Vedi codice">
+                     <img src="./img/code.png" alt="code" width="30px">
+                </a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-image-container">
+                <img src="./img/alarion.png" alt="Alarion Project">
+            </div>
+            <h3 data-key="project-alarion-title">Alarion</h3>
+            <p data-key="project-alarion-description">Un progetto di sviluppo web per imparare le basi di HTML e CSS.</p>
+            <div class="project-links">
+                <a href="https://lucaa06.github.io/Alarion/" target="_blank" class="btn-launch-demo" data-key="launch-demo-btn-text" title="Lancia demo">
+                    <img src="./img/lounch.png" alt="demo">
+                </a>
+                <a href="https://github.com/lucaa06/Alarion" target="_blank" class="btn-view-code" data-key="view-code-btn-text" title="Vedi codice">
+                    <img src="./img/code.png" alt="code" width="30px">
+                </a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-image-container">
+                <img src="./img/treeJS.png" alt="3D Website Tree Project">
+            </div>
+            <h3 data-key="project-3d-title">3D Website Tree</h3>
+            <p data-key="project-3d-description">Un sito web 3D creato con three.js per esplorare le potenzialità della libreria.</p>
+            <div class="project-links">
+                <a href="https://lucaa06.github.io/3DwebsiteTree.js/" target="_blank" class="btn-launch-demo" data-key="launch-demo-btn-text" title="Lancia demo">
+                     <img src="./img/lounch.png" alt="demo">
+                </a>
+                <a href="https://github.com/lucaa06/3DwebsiteTree.js" target="_blank" class="btn-view-code" data-key="view-code-btn-text" title="Vedi codice">
+                     <img src="./img/code.png" alt="code" width="30px">
+                </a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-image-container">
+                <img src="./img/cookie.png" alt="Cookie Analyzer Project">
+            </div>
+            <h3 data-key="project-cookie-title">Cookie Analyzer</h3>
+            <p data-key="project-cookie-description">Un'estensione web per analizzare i cookie di un sito e le loro proprietà.</p>
+            <div class="project-links">
+                <a href="https://lucaa06.github.io/Cookie-Analyzer/" class="btn-launch-demo" data-key="launch-demo-btn-text" title="Lancia demo">
+                    <img src="./img/lounch.png" alt="demo">
+                </a>
+                <a href="https://github.com/lucaa06/Cookie-Analyzer" target="_blank" class="btn-view-code" data-key="view-code-btn-text" title="Vedi codice">
+                     <img src="./img/code.png" alt="code" width="30px">
+                </a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-image-container">
+                <img src="./img/dopamine.png" alt="Dopamine Preview Project">
+            </div>
+            <h3 data-key="project-dopamine-title">Dopamine Preview</h3>
+            <p data-key="project-dopamine-description">Un'anteprima di un sito web, focalizzata sul design e l'esperienza utente.</p>
+            <div class="project-links">
+                <a href="https://lucaa06.github.io/DopaminePreview/" target="_blank" class="btn-launch-demo" data-key="launch-demo-btn-text" title="Lancia demo">
+                    <img src="./img/lounch.png" alt="demo">
+                </a>
+                <a href="https://github.com/lucaa06/DopaminePreview" target="_blank" class="btn-view-code" data-key="view-code-btn-text" title="Vedi codice">
+                     <img src="./img/code.png" alt="code" width="30px">
+                </a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-image-container">
+                <img src="./img/TaskForge.png" alt="Task Forge Project">
+            </div>
+            <h3 data-key="project-taskforge-title">Task Forge</h3>
+            <p data-key="project-taskforge-description">Un gestore di attività per Windows, che mostra l'utilizzo di Python.</p>
+            <div class="project-links">
+                <a href="https://lucaa06.github.io/taskForge/" class="btn-launch-demo" data-key="launch-demo-btn-text" title="Lancia demo">
+                    <img src="./img/lounch.png" alt="demo">
+                </a>
+                <a href="https://github.com/lucaa06/taskForge" target="_blank" class="btn-view-code" data-key="view-code-btn-text" title="Vedi codice">
+                    <img src="./img/code.png" alt="code" width="30px">
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+  <section id="certifications" class="full-screen-section">
+    <h2 data-key="certifications-title">Certificazioni</h2>
+    <div class="certs-container">
+        <div class="cert-list">
+            <div class="cert-item" data-cert="cybersecurity">
+                <i class="fa-solid fa-shield-alt"></i>
+                <span class="cert-name" data-key="cert-cybersecurity-name">Introduction to Cybersecurity</span>
+            </div>
+            <div class="cert-item" data-cert="aws">
+                <i class="fa-solid fa-cloud"></i>
+                <span class="cert-name" data-key="cert-aws-name">AWS Educate Introduction to Cloud 101</span>
+            </div>
+            <div class="cert-item" data-cert="business">
+                <i class="fa-solid fa-briefcase"></i>
+                <span class="cert-name" data-key="cert-business-name">Managing a Business Venture</span>
+            </div>
+            <div class="cert-item" data-cert="css3">
+                <i class="fa-brands fa-css3-alt"></i>
+                <span class="cert-name" data-key="cert-css3-name">CSS3 Essentials</span>
+            </div>
+        </div>
+
+        <div class="cert-details">
+            <div class="cert-description" data-key="cert-placeholder">
+                Seleziona una certificazione per vederne i dettagli.
+            </div>
+            <div class="cert-image-container">
+                </div>
+        </div>
+    </div>
+</section>
+
+<section id="education" class="full-screen-section">
+    <h2 data-key="education-title">Esperienze formative</h2>
+    <div class="education-card">
+        <h3 data-key="education-silicon">SILICON VALLEY STUDY TOUR 2025</h3>
+        <div class="svst-gallery-container">
+            <button class="svst-nav-btn prev-btn">&lt;</button>
+            <div class="svst-gallery-track">
+                <img src="./img/SVST1.jpg" alt="SVST Image 1" class="svst-img" id="svst-img-1">
+                <img src="./img/SVST2.jpg" alt="SVST Image 2" class="svst-img" id="svst-img-2">
+                <img src="./img/SVST3.jpg" alt="SVST Image 3" class="svst-img" id="svst-img-3">
+                <img src="./img/SVST4.jpg" alt="SVST Image 4" class="svst-img" id="svst-img-4">
+                <img src="./img/SVST5.jpg" alt="SVST Image 5" class="svst-img" id="svst-img-5">
+                <img src="./img/SVST6.jpg" alt="SVST Image 6" class="svst-img" id="svst-img-6">
+                <img src="./img/SVST7.jpg" alt="SVST Image 7" class="svst-img" id="svst-img-7">
+                <img src="./img/SVST8.jpg" alt="SVST Image 8" class="svst-img" id="svst-img-8">
+            </div>
+            <button class="svst-nav-btn next-btn">&gt;</button>
+        </div>
+        <button id="view-experience-btn" data-key="view-experience-btn">Vedi Esperienza</button>
+    </div>
+</section>
+
+<div id="experience-details" class="experience-details-container">
+    <button class="close-btn">&times;</button>
+    <div class="details-content">
+        <h3>Silicon Valley Study Tour 2025</h3>
+        <div class="details-gallery">
+            <img src="./img/SVST1.jpg" alt="SVST Image 1">
+            <img src="./img/SVST2.jpg" alt="SVST Image 2">
+            <img src="./img/SVST3.jpg" alt="SVST Image 3">
+            <img src="./img/SVST4.jpg" alt="SVST Image 4">
+            <img src="./img/SVST5.jpg" alt="SVST Image 5">
+            <img src="./img/SVST6.jpg" alt="SVST Image 6">
+            <img src="./img/SVST7.jpg" alt="SVST Image 7">
+        </div>
+       <h1>SVST 2025</h1><br><br>
+
+<p>Il 15 agosto si è conclusa la mia settimana al <strong>Silicon Valley Study Tour 2025</strong>.  
+A distanza di pochi giorni, porto ancora con me l’energia, la curiosità e l’ispirazione che questa esperienza unica ha lasciato dentro di me. Non si è trattato solo di un viaggio, ma di un vero e proprio percorso di crescita personale e professionale, capace di lasciare un segno profondo.</p><br>
+
+<p>In soli cinque giorni ho avuto la straordinaria opportunità di visitare luoghi che, fino a poco tempo fa, consideravo quasi mitici: <strong>Stanford, Berkeley, Cisco, Google, LinkedIn, Pure Storage, Electronic Arts, Zoox, Sysdig</strong> e molte altre realtà che costituiscono il cuore pulsante dell’innovazione mondiale. Ogni incontro, ogni testimonianza e ogni passeggiata tra i campus e gli headquarters ha rappresentato una finestra aperta sul futuro.</p><br>
+
+<p>L’atmosfera di Stanford e Berkeley mi ha colpito particolarmente: non soltanto per la bellezza architettonica e il valore storico di queste università, ma per l’incredibile concentrazione di talento, creatività e voglia di cambiare il mondo. Camminando tra i cortili e le aule, si respira un’energia contagiosa, fatta di studenti e ricercatori che lavorano con passione a idee che potrebbero trasformare la società di domani.</p><br>
+
+<p>Le visite alle aziende sono state altrettanto illuminanti. Entrare in colossi come Google e LinkedIn significa osservare da vicino la scala impressionante a cui può arrivare un’idea, quando è sostenuta da visione, organizzazione e coraggio. Allo stesso tempo, realtà come Zoox o Sysdig mi hanno mostrato quanto anche startup più giovani e specializzate riescano a spingere avanti i confini della tecnologia con creatività e agilità.</p><br>
+
+<p>Ogni incontro con i professionisti della Valley è stato una lezione preziosa. Ho ascoltato storie di sfide iniziali, di fallimenti trasformati in opportunità, di percorsi di carriera non lineari ma ricchi di scelte coraggiose. Ciò che mi ha colpito maggiormente è stata la naturalezza con cui il fallimento viene considerato parte integrante del processo innovativo: un approccio molto diverso dalla mentalità più diffidente che spesso domina in altri contesti.</p><br>
+
+<p>Dal punto di vista personale, ho avuto modo di confrontarmi con studenti e giovani professionisti provenienti da diverse parti d’Italia. La condivisione di esperienze, idee e sogni ha arricchito ulteriormente il viaggio, creando legami che, sono certo, continueranno anche dopo questa avventura. Non si tratta solo di networking, ma di amicizie costruite sulla base di passioni comuni e sul desiderio condiviso di crescere e imparare.</p><br>
+
+<p>Il Silicon Valley Study Tour mi ha insegnato anche a guardare al futuro con maggiore fiducia. Ho compreso che non esiste un unico percorso prestabilito, ma tante possibili strade, ognuna con le proprie difficoltà e opportunità. L’importante è avere la determinazione di perseguire i propri obiettivi e la capacità di adattarsi ai cambiamenti, imparando costantemente da ciò che ci circonda.</p><br>
+
+<p>Porto con me un bagaglio di ispirazioni: la mentalità “think big” che caratterizza la Valley, il valore della collaborazione tra persone di culture e background diversi, l’importanza di credere nelle proprie idee anche quando sembrano troppo ambiziose. Tutti questi elementi non rimarranno solo un ricordo, ma saranno una bussola che mi guiderà nelle scelte future.</p><br>
+
+<p>In conclusione, il Silicon Valley Study Tour 2025 non è stato soltanto un viaggio all’interno di un ecosistema straordinario, ma un invito a pensare diversamente, a osare, a non avere paura di sbagliare. È stata un’esperienza che mi ha arricchito sotto ogni punto di vista e che conserverò come stimolo costante per il mio percorso, professionale e umano.  
+Sono certo che quanto appreso in questa settimana continuerà ad accompagnarmi e a trasformarsi in nuove idee, progetti e sogni da realizzare.</p><br><br><br>
+
+</p>
+    </div>
+</div>
+<section id="experience" class="full-screen-section">
+    <h2 data-key="experience-title">Esperienze lavorative</h2>
+    <div class="experience-grid">
+        <div class="experience-card" data-experience="coach">
+            <div class="card-front">
+                <div class="card-image-container">
+                    <img src="./img/volley.png" alt="Volley Image" class="card-front-image">
+                    <div class="text-overlay">
+                        <h3 data-key="experience-coach">allenatore</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="card-back">
+                <div class="back-content">
+                    <p data-key="coach-text">Per un anno, ho guidato una squadra Under 13 del CUS Genova Volley. L'obiettivo non era solo vincere, ma anche trasmettere l'amore per la pallavolo. Li ho accompagnati nello sviluppo di tutte le tecniche di difesa, attacco, ricezione e battuta, aiutandoli a migliorare la coordinazione e a capire l'importanza del gioco di squadra. Questa esperienza mi ha insegnato il valore della leadership, della comunicazione e della pazienza.</p>
+                    <button class="close-card">
+                        <span class="close-icon">&times;</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="experience-card" data-experience="animator">
+            <div class="card-front">
+                <div class="card-image-container">
+                    <img src="./img/capriole.png" alt="Animator Image" class="card-front-image">
+                    <div class="text-overlay">
+                        <h3 data-key="experience-animator">animatore</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="card-back">
+                <div class="back-content">
+                    <p data-key="animator-text">
+                        Come animatore, ho trasformato feste di compleanno e matrimoni in eventi indimenticabili. La mia specialità? Le capriole sulle nuvole! Nonostante il nome giocoso, questa esperienza mi ha insegnato a gestire un pubblico, a lavorare sotto pressione e a pensare in modo creativo per risolvere problemi sul momento. Ho affinato le mie capacità comunicative e ho imparato a creare un ambiente di gioia e spensieratezza, rendendo ogni celebrazione un successo.</p>
+                    <button class="close-card">
+                        <span class="close-icon">&times;</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section id="skills" class="white-theme full-screen-section">
+  <h2 class="section-title" data-key="skills-title">Le mie Competenze</h2>
+  <h4>gratta e scopri!</h4>
+  <div class="skills-container">
+    <div class="skills-card-wrapper">
+      <div class="skills-card">
+        <div class="card-header">
+          <i class="fas fa-code"></i>
+          <h3 data-key="skills-lang-title">Linguaggi & Web</h3>
+        </div>
+        <ul class="skills-list">
+          <li>HTML5</li>
+          <li>CSS3</li>
+          <li>JavaScript</li>
+          <li>Java</li>
+          <li>PHP</li>
+          <li>SQL</li>
+        </ul>
+      </div>
+      <canvas class="scratch-canvas"></canvas>
+    </div>
+
+    <div class="skills-card-wrapper">
+      <div class="skills-card">
+        <div class="card-header">
+          <i class="fas fa-tools"></i>
+          <h3 data-key="skills-tools-title">Strumenti & Tecnologie</h3>
+        </div>
+        <ul class="skills-list">
+          <li>Reti CISCO</li>
+          <li>Excel</li>
+          <li>Git & GitHub</li>
+          <li>AWS Cloud (Base)</li>
+        </ul>
+      </div>
+      <canvas class="scratch-canvas"></canvas>
+    </div>
+
+    <div class="skills-card-wrapper">
+      <div class="skills-card">
+        <div class="card-header">
+          <i class="fas fa-users"></i>
+          <h3 data-key="skills-soft-title">Soft Skills</h3>
+        </div>
+        <ul class="skills-list">
+          <li>Problem Solving</li>
+          <li>Creatività</li>
+          <li>Gestione Progetti</li>
+          <li>Analisi Dati</li>
+          <li>Teamwork</li>
+          <li>Adattabilità</li>
+        </ul>
+      </div>
+      <canvas class="scratch-canvas"></canvas>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+  <footer id="contact" class="full-screen-section">
+    <div class="contact-content">
+        <h2 data-key="contact-title">Contatti</h2>
+        <p data-key="contact-description">Se desideri metterti in contatto con me, inviami una mail o cercami sui social.</p>
+        <div class="contact-links">
+            <a href="mailto:lucacutrono06@gmail.com" class="contact-link">
+                <i class="fas fa-envelope"></i>
+                <span data-key="email-text">Email</span>
+            </a>
+            <a href="https://www.linkedin.com/in/luca-cutrono-710359285/" target="_blank" class="contact-link">
+                <i class="fab fa-linkedin"></i>
+                <span data-key="linkedin-text">LinkedIn</span>
+            </a>
+            <a href="https://github.com/lucaa06" target="_blank" class="contact-link">
+                <i class="fab fa-github"></i>
+                <span data-key="github-text">GitHub</span>
+            </a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
