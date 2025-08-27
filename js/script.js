@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'cert-aws-name': 'AWS Educate Introduction to Cloud 101',
             'cert-business-name': 'Managing a Business Venture',
             'cert-placeholder': 'Seleziona una certificazione per vederne i dettagli.',
-            'cert-cybersecurity-desc': 'Certificazione CISCO Cybersecurity ottenuta nel 2024. Ho imparato le basi della sicurezza informatica, la protezione dei dati e la prevenzione delle minacce online.',
+            'cert-cybersecurity-desc': 'Certificazione CISCO Cybersecurity ottenuta nel 2024. Ho imparato le basi della sicurezza informatica, la protezione dei dati e la prevenzione delle minacce online.', 
             'cert-aws-desc': 'Certificazione AWS Cloud 101. Ho acquisito le nozioni fondamentali del cloud computing, i servizi AWS e i vantaggi della migrazione al cloud per le aziende.',
             'cert-business-desc': 'Certificazione "Managing a Business Venture". Ho appreso i principi chiave della gestione aziendale, della pianificazione strategica e dello sviluppo di un’idea di startup.',
             'github-profile-title': 'Il mio profilo GitHub',
