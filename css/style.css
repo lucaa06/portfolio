@@ -781,7 +781,7 @@ body.details-open::after {
 .card-back p {
     font-size: 1rem;
     line-height: 1.5;
-    margin-top: 0;
+    margin-top: 150px;
     margin-bottom: 20px;
     text-align: center;
     flex-grow: 1;
