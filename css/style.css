@@ -411,7 +411,7 @@ h2.section-title::after {
 }
 @keyframes float {
     0% { transform: translateY(0); }
-    50% { transform: translateY(-28px); }
+    50% { transform: translateY(-3%); }
     100% { transform: translateY(0); }
 }
 @media (min-width: 768px) {
